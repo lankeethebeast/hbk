@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service | CleanHaven CCF</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="assets/logos/logo.jpeg" alt="CleanHaven Logo">
+                <span class="brand">CleanHaven</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#departments">Teams</a></li>
+                <li><a href="apply.html">Join Us</a></li>
+            </ul>
+            <a href="index.html" class="btn-nav">Back Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Book a Service</h2>
+                <p>Fill in the details below to schedule your premium cleaning session.</p>
+            </div>
+
+            <form id="bookingForm">
+                <div class="form-grid">
+                    <div class="form-group full">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0801 234 5678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="address">Property Address</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Street, City, State"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Select Property Type</label>
+                        <div class="select-type-grid">
+                            <div class="type-card" data-type="Apartment">
+                                <i data-lucide="home"></i>
+                                <h4>Apartment</h4>
+                            </div>
+                            <div class="type-card" data-type="Construction Site">
+                                <i data-lucide="construction"></i>
+                                <h4>Construction Site</h4>
+                            </div>
+                            <div class="type-card" data-type="Event Hall">
+                                <i data-lucide="theater"></i>
+                                <h4>Event Hall</h4>
+                            </div>
+                            <div class="type-card" data-type="Office Space">
+                                <i data-lucide="briefcase"></i>
+                                <h4>Office Space</h4>
+                            </div>
+                        </div>
+                        <input type="hidden" id="propertyType" name="propertyType" required>
+                    </div>
+
+                    <div class="form-group full dynamic-select" id="roomsGroup">
+                        <label id="roomsLabel">Number of Rooms</label>
+                        <select id="rooms" name="rooms">
+                            <option value="">Select quantity</option>
+                            <!-- JS will populate options 1-20 -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i data-lucide="check-circle-2"></i>
+            </div>
+            <h3>Booking Received!</h3>
+            <p style="color: var(--text-gray); margin: 1rem 0 2rem;">Thank you for choosing CleanHaven. Our team will
+                contact you shortly to finalize the schedule.</p>
+            <a href="index.html" class="btn btn-primary" style="width: 100%;">Return to Home</a>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

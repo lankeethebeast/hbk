@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Application | Join CleanHaven Team</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="assets/logos/logo.jpeg" alt="CleanHaven Logo">
+                <span class="brand">CleanHaven</span>
+            </a>
+            <ul class="nav-links">
+
+            </ul>
+            <a href="index.html" class="btn-nav">Back Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Staff Application</h2>
+                <p>We are looking for dedicated, honest, and hardworking individuals to join our growing family.</p>
+            </div>
+
+            <form id="applyForm">
+                <div class="form-grid">
+                    <div class="form-group full">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Your Full Legal Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0801..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="address">Home Address</label>
+                        <textarea id="address" name="address" rows="2" placeholder="Where do you reside?"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nin">NIN (National Identification Number)</label>
+                        <input type="text" id="nin" name="nin" placeholder="11-digit number" required>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="certificate">School Certificate</label>
+                        <div style="position: relative;">
+                            <input type="file" id="certificate" name="certificate" accept=".jpg,.jpeg,.png,.pdf"
+                                required style="padding-left: 3rem;">
+                            <i data-lucide="upload"
+                                style="position: absolute; left: 1rem; top: 1.1rem; width: 1.2rem; color: var(--text-gray);"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guarantor">Guarantor Letter</label>
+                        <div style="position: relative;">
+                            <input type="file" id="guarantor" name="guarantor" accept=".jpg,.jpeg,.png,.pdf" required
+                                style="padding-left: 3rem;">
+                            <i data-lucide="upload"
+                                style="position: absolute; left: 1rem; top: 1.1rem; width: 1.2rem; color: var(--text-gray);"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 1.5rem 0; font-size: 0.85rem; color: var(--text-gray);">
+                    <p>By submitting, you agree to background checks and verification of provided documents.</p>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i data-lucide="check-circle-2"></i>
+            </div>
+            <h3>Application Submitted</h3>
+            <p style="color: var(--text-gray); margin: 1rem 0 2rem;">Our HR team will review your credentials and
+                contact you if you meet our requirements.</p>
+            <a href="index.html" class="btn btn-primary" style="width: 100%;">Return to Home</a>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
