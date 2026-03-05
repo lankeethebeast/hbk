@@ -13,6 +13,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+
+            // Toggle icon (menu -> x)
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // Refresh icons
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+    }
+
     // --- Booking Form Logic ---
     const bookingForm = document.getElementById('bookingForm');
     const typeCards = document.querySelectorAll('.type-card');
@@ -34,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.addEventListener('click', () => {
                 // Remove active from all
                 typeCards.forEach(c => c.classList.remove('active'));
-                
+
                 // Add to clicked
                 card.classList.add('active');
                 const type = card.dataset.type;
@@ -42,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Dynamic UI based on type
                 roomsGroup.style.display = 'block';
-                
+
                 if (type === 'Apartment') {
                     roomsLabel.textContent = 'Number of Rooms';
                 } else if (type === 'Construction Site') {

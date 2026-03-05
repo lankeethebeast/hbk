@@ -186,9 +186,22 @@ textarea:focus {
     margin: 0 auto 2rem;
 }
 
+@media (max-width: 768px) {
+    .form-container {
+        margin-top: 6rem;
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+    }
+
+    .form-header h2 {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 640px) {
     .form-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .form-group.full {
@@ -200,6 +213,28 @@ textarea:focus {
     }
 
     .form-container {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
+        margin-top: 5rem;
+    }
+
+    .type-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.75rem;
+    }
+
+    input,
+    select,
+    textarea,
+    .btn-submit {
+        padding: 0.8rem;
     }
 }
